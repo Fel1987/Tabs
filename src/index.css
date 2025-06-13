@@ -321,7 +321,7 @@ ul {
   .jobs-center {
     width: 90vw;
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 650px 1fr;
     column-gap: 4rem;
   }
   .btn-container {
