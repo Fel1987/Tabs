@@ -1,4 +1,5 @@
 const url = "https://www.course-api.com/react-tabs-project";
+import JobInfo from "./JobInfo";
 import { useFetch } from "./useFetch";
 
 const App = () => {
@@ -12,6 +13,18 @@ const App = () => {
     );
   }
 
-  return <h2>Tabs Starter</h2>;
+  if (isError || data.length === 0) {
+    return (
+      <section className="jobs-center">
+        <h2>Something went wrong or no jobs available.</h2>
+      </section>
+    );
+  }
+
+  return (
+    <section className="jobs-center">
+      <JobInfo jobs={data} />
+    </section>
+  );
 };
 export default App;
