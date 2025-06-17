@@ -1,10 +1,16 @@
 const url = "https://www.course-api.com/react-tabs-project";
+import { useState } from "react";
 import ButtonContainer from "./ButtonContainer";
 import JobInfo from "./JobInfo";
 import { useFetch } from "./useFetch";
 
 const App = () => {
   const { isLoading, isError, data } = useFetch(url);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  function handleActiveIndex(index) {
+    setActiveIndex(index);
+  }
 
   if (isLoading) {
     return (
@@ -24,8 +30,12 @@ const App = () => {
 
   return (
     <section className="jobs-center">
-      <ButtonContainer jobs={data} />
-      <JobInfo jobs={data} />
+      <ButtonContainer
+        jobs={data}
+        onHandleIndex={handleActiveIndex}
+        activeIndex={activeIndex}
+      />
+      <JobInfo jobs={data} activeIndex={activeIndex} />
     </section>
   );
 };
