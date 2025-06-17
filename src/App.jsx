@@ -1,4 +1,5 @@
 const url = "https://www.course-api.com/react-tabs-project";
+import ButtonContainer from "./ButtonContainer";
 import JobInfo from "./JobInfo";
 import { useFetch } from "./useFetch";
 
@@ -23,6 +24,7 @@ const App = () => {
 
   return (
     <section className="jobs-center">
+      <ButtonContainer jobs={data} />
       <JobInfo jobs={data} />
     </section>
   );

@@ -1,7 +1,7 @@
 import Duties from "./Duties";
 
 export default function JobInfo({ jobs }) {
-  const { company, dates, duties, title } = jobs[0];
+  const { id, company, dates, duties, title } = jobs[0];
 
   return (
     <article>
